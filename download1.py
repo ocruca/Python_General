@@ -22,7 +22,7 @@ for i in range(8600, 8610):
         if request.status_code == 200:
             print("Download => " + url)
             r = requests.get(url, allow_redirects=True)
-            filename = path + str(get_filename_from_cd(r.headers.get('content-disposition'))).replace('"','')
+            filename = path + str(get_filename_from_cd(r.headers.get('content-disposition'))).replace('"','').replace('/','_')
             open(filename, 'wb').write(r.content)
 
         else:
