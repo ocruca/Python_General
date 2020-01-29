@@ -29,3 +29,4 @@ for i in range(8600, 8610):
             print("Url (" + url + ") returned response code: {code}".format(code=request.status_code))
     except ConnectionError:
         print('Url does not exist')
+        pass
